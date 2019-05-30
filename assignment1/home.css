@@ -1,0 +1,23 @@
+#clown {
+  margin-top: 40px;
+  margin-left: 510px;
+  width: 550px;
+  height: 480px;
+}
+#ask {
+  color: black;
+}
+h1 {
+  color: red;
+  margin-left: 510px;
+}
+#input {
+  margin-left: 510px;
+  border-color: gray;
+  background-color: gray;
+  width: 550px;
+  height: 30px;
+}
+body {
+  background-color: black;
+}

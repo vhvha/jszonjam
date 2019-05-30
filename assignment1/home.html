@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>보여줘</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="home.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <img
+      id="clown"
+      src="http://post.phinf.naver.net/MjAxNzA3MjhfMTUz/MDAxNTAxMjI1MTcyODAy.5COKs-jMFmyfJEE8Ow8qH2vtBomUmunM3srTVoS5h7wg.uYEjaaB37tQJHcmmQ0XycB495YpC8y_SPuB1wT_NM6Ug.JPEG/I116nBuyvyAX1uRbZ6fe6yPqBwhM.jpg"
+    />
+    <h1>무엇이든 물어봐..</h1>
+    <h1 id="result">_________________________________________</h1>
+    <input type="text" id="input" />
+  </body>
+  <script>
+    let clown = document.querySelector("#clown"); //기본 삐에로
+    let clownArray = [
+      "http://post.phinf.naver.net/MjAxNzA3MjhfMTUz/MDAxNTAxMjI1MTcyODAy.5COKs-jMFmyfJEE8Ow8qH2vtBomUmunM3srTVoS5h7wg.uYEjaaB37tQJHcmmQ0XycB495YpC8y_SPuB1wT_NM6Ug.JPEG/I116nBuyvyAX1uRbZ6fe6yPqBwhM.jpg",
+      "https://img.insight.co.kr/static/2017/07/28/700/hqmn43byvhk8lb7coq33.jpg"
+    ]; // 삐에로 함수에서 쓸 삐에로 배열
+    let clownIndex = 0; //삐에로 함수에서 쓸 삐에로 인덱스
+    let result = document.querySelector("#result");
+    let input = document.querySelector("#input");
+
+    // 삐에로 사진 바꾸는 함수
+    function changeClown() {
+      clown.setAttribute("src", clownArray[clownIndex]);
+      if (clownIndex === 0) {
+        clownIndex++;
+      } else {
+        clownIndex = 0;
+      }
+    }
+
+    setInterval(changeClown, 2500); // 삐에로 얼굴이 계속 변하게
+
+    input.addEventListener("keydown", keydown);
+
+    function keydown(event) {
+      console.log(input.value);
+      if (event.keyCode === 13) {
+        result.textContent = input.value;
+      }
+    }
+  </script>
+</html>
